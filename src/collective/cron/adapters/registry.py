@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 __docformat__ = 'restructuredtext en'
-import logging
-import transaction
 from zope.schema.fieldproperty import FieldProperty
 from zope.interface import (implements,)
-from zope.component import adapts, getUtility, adapter, getAdapters
+from zope.component import adapts, getUtility, adapter
 from zope.site.hooks import getSite
 from zope.event import notify
 from plone.registry.interfaces import (
@@ -18,7 +16,6 @@ from collective.cron.interfaces import (
     ICrontab,
     ICrontabRegistryManager,
     IRegistryCrontab,
-    AsyncQueueNotReady,
     RegistryCrontabNotReady,
     AsyncQueueNotReady,
 )

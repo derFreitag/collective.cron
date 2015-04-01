@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import os, sys
 import logging
 import Zope2
-from zope.site.hooks import getSite, setSite
+from zope.site.hooks import setSite
 
 from zope.component import getUtility, getMultiAdapter
 
@@ -13,15 +12,7 @@ except:
     #plone4
     from plone.app.upgrade import utils as migration_util
 
-from AccessControl.SecurityManagement import getSecurityManager, setSecurityManager
 from Products.CMFCore.utils import getToolByName
-from Products.ATContentTypes.interface.image import IATImage
-from Products.ATContentTypes.content.image import ATImage
-import transaction
-
-
-from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import _createObjectByType
 from collective.cron import interfaces as i
 
 PROFILE =  'collective.cron:default'

@@ -1,18 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 __docformat__ = 'restructuredtext en'
-import logging
-from ordereddict import OrderedDict
-
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
-from zope.interface import implements, implementsOnly
-from zope.event import notify
+from zope.interface import implements
 from zope.component import (
     adapts,
-    adapter,
-    getAdapters,
-    getMultiAdapter,
-    getAdapter,
 )
 from collective.cron import interfaces as i
 from collective.cron import utils

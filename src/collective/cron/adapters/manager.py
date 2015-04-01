@@ -12,7 +12,6 @@ from zope.component import (
     adapter,
     getAdapters,
     ComponentLookupError,
-    getMultiAdapter,
     getAdapter,
 )
 from collective.cron import interfaces as i

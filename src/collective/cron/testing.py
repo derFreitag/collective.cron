@@ -1,37 +1,10 @@
 import datetime
-from Testing import ZopeTestCase as ztc
 from zc.async import testing as zcatesting
 import os
 import croniter
 import transaction
-from OFS.Folder import Folder
 
-from zope.component import getUtility
-
-import unittest2 as unittest
-
-from zope.configuration import xmlconfig
-
-from plone.app.testing import (
-    FunctionalTesting as BFunctionalTesting,
-    IntegrationTesting as BIntegrationTesting,
-    PLONE_FIXTURE,
-    helpers,
-    PloneSandboxLayer,
-    setRoles,
-
-    SITE_OWNER_NAME,
-    SITE_OWNER_PASSWORD,
-    TEST_USER_ID,
-    TEST_USER_ID,
-    TEST_USER_NAME,
-    TEST_USER_NAME,
-    TEST_USER_ROLES,
-)
-from plone.app.testing.selenium_layers import (
-    SELENIUM_FUNCTIONAL_TESTING as SELENIUM_TESTING
-)
-from plone.testing import Layer, zodb, zca, z2
+from plone.testing import Layer, z2
 
 
 from collective.cron import crontab
@@ -39,11 +12,9 @@ from collective.cron.adapters import (
     manager,
     utils as autils,
 )
-from plone.app.async.interfaces import IAsyncService
 from plone.app.async import testing as base
 from plone.app.async.testing import (
     PLONE_MANAGER_NAME,
-    PLONE_MANAGER_ID,
     PLONE_MANAGER_PASSWORD,
 )
 

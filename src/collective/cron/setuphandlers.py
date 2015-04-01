@@ -2,13 +2,11 @@ import logging
 from zope.component import getMultiAdapter
 from Products.CMFCore.utils import getToolByName
 from collective.cron import interfaces as i
-from collective.cron import events as e
 from collective.cron import crontab
-from zope.component.hooks import getSite, setSite
 import transaction
 
 from StringIO import StringIO
-from zope.event import notify
+
 
 def setupVarious(context):
     # Ordinarily, GenericSetup handlers check for the existence of XML files.

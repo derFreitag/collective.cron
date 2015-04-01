@@ -4,16 +4,12 @@ __docformat__ = 'restructuredtext en'
 
 from zope.interface import (Interface,
                             Attribute,
-                            implements,
-                            implementedBy,
-                            classProvides,
-                            invariant,)
+                            implementedBy,)
 from zope import schema
 from zope.schema import vocabulary
 from collective.cron import MessageFactory as _
 from collective.cron.utils import croniter
 from zope.component.interfaces import IObjectEvent
-from collective.cron.utils import asbool
 
 from zope.interface import Invalid
 
@@ -375,9 +371,6 @@ class IFinishedCronJobEvent(IObjectEvent):
     object = Attribute(_('plonesite'))
     cron = Attribute(_('cron'))
     log = Attribute(_('Run log'))
-
-class IModifiedCrontabEvent(IObjectEvent):
-    crontab = Attribute(_('crontab'))
 
 class IModifiedCrontabEvent(IObjectEvent):
     object = Attribute(_('crontab'))

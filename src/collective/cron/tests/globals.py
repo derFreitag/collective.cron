@@ -25,22 +25,13 @@ All from there will be imported in this namespace
 """
 ################################################################################
 
-import ConfigParser
 import os
-import re
 import sys
-from copy import deepcopy
-from pprint import pprint
 cwd = os.path.dirname(__file__)
 import zope
-from zope.interface.verify import verifyObject
 
-from zope import interface, schema
-from zope.component import adapts, getMultiAdapter, getAdapter, getAdapters
 def get_interfaces(o): # pragma: no cover
     return [o for o in o.__provides__.interfaces()]
-
-from zope.interface import implementedBy, providedBy
 
 # used on testing
 # copied from ZopeLite Class from zope.testingZope.TestCase
@@ -76,4 +67,4 @@ from collective.cron.testing import (
     TEST_USER_ID,
     TEST_USER_NAME,
     TEST_USER_ROLES,
-)                      
+)

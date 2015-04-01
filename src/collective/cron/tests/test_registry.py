@@ -1,15 +1,8 @@
-import datetime
-import pytz
 import unittest2 as unittest
-from pprint import pprint, pformat
-
-from zope.schema.interfaces import RequiredMissing, ConstraintNotSatisfied
-from zope import schema, component
 
 from collective.cron.tests import base
-from collective.cron import crontab, utils
+from collective.cron import crontab
 from collective.cron import interfaces as i
-from collective.cron.adapters import registry, utils as autils
 import os
 J = os.path.join
 

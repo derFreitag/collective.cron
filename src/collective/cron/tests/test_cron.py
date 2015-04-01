@@ -1,7 +1,5 @@
 import datetime
-import pytz
 import unittest2 as unittest
-from pprint import pprint, pformat
 
 from zope.schema.interfaces import RequiredMissing, ConstraintNotSatisfied
 from zope import schema, component

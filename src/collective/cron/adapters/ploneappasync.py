@@ -13,8 +13,6 @@ from zope.component import (
     adapts,
     getUtility,
     getMultiAdapter,
-    getAdapters,
-    getAdapter,
     adapter
 )
 import Zope2
@@ -38,7 +36,6 @@ from plone.app.async.interfaces import IQueueReady
 from collective.cron import interfaces as i
 from collective.cron import events as e
 from collective.cron import crontab
-from collective.cron import utils
 
 
 def queue_aware(func):

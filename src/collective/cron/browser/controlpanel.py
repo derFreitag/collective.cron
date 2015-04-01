@@ -1,25 +1,19 @@
-import os
-
 from zope.publisher.interfaces import IPublishTraverse
-from zope.component import adapts, getUtility, getMultiAdapter
-from zope import component
-from zope.interface import alsoProvides, implements, Interface, Invalid
+from zope.component import getMultiAdapter
+from zope.interface import implements, Interface, Invalid
 from zope import schema
 
 from z3c.form import field, form, validator
-from z3c.form.interfaces import IForm
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 
 from plone.z3cform import layout
-from plone.registry.interfaces import IRegistry
 
 from collective.cron import MessageFactory as _
 from collective.cron.interfaces import (
     ICron,
-    CronFormatError,
     is_json_dict,
     job_status,
     ICronManager,
@@ -27,7 +21,6 @@ from collective.cron.interfaces import (
 from collective.cron import crontab
 from Products.statusmessages.interfaces import IStatusMessage
 
-from z3c.form.interfaces import ActionExecutionError, WidgetActionExecutionError
 
 class FormFields(Interface):
     senviron = schema.Text(title=_('Environ (variables) as a JSON dict'),

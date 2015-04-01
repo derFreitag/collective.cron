@@ -1,13 +1,5 @@
 import unittest2 as unittest
-import datetime
-from pytz import UTC, timezone
 from collective.cron.tests import base
-from collective.cron.utils import (
-    su_plone,
-    asbool,
-    NoSuchUserError,
-    to_utc,
-)
 
 
 from collective.cron import interfaces as i

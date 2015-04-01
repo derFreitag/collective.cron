@@ -1,20 +1,11 @@
 import pytz
 import datetime
 import transaction
-#from zc.async.testing import set_now, setUpDatetime, tearDownDatetime
-from collective.cron.testing import set_now, setUpDatetime, tearDownDatetime
-from collective.cron import crontab
-from collective.cron.adapters import (
-    manager,
-    utils as autils,
-)
-
-import unittest2 as unittest
+from collective.cron.testing import set_now
 
 from collective.cron import testing as t
 
 from plone.app.async.tests import base
-from plone.testing.z2 import Browser
 
 
 class TestCase(base.AsyncTestCase):

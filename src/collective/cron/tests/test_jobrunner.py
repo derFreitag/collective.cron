@@ -1,20 +1,11 @@
 from Products.PythonScripts.tests.testPythonScript import VerifiedPythonScript
 import transaction
 import unittest2 as unittest
-import datetime
-from pytz import UTC, timezone
 from collective.cron.tests import base
-from collective.cron.utils import (
-    su_plone,
-    asbool,
-)
 
 from collective.cron import interfaces as i
 from collective.cron.crontab import runJob, Runner, Crontab
-from zope.component import getGlobalSiteManager, getAdapters, queryMultiAdapter, adapts, adapter
-from zope.interface import implements
-
-from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
+from zope.component import getGlobalSiteManager, queryMultiAdapter, adapter
 
 
 _finished = []

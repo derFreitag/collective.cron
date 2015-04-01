@@ -1,14 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 __docformat__ = 'restructuredtext en'
-import datetime
-
-
 from zope.interface import implements
 from zope.component import adapts
 from collective.cron import interfaces as i
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
-from collective.cron import crontab
+
 
 class CCRONUtils(object):
     adapts(IPloneSiteRoot, i.ICron)

@@ -1,18 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import logging
-import pytz
 import time
-import transaction
 import uuid
 __docformat__ = 'restructuredtext en'
 from zope.schema.fieldproperty import FieldProperty
-from zope.interface import (Interface,
-                            Attribute,
-                            implements,
-                            implementedBy,
-                            classProvides,
-                            invariant,)
+from zope.interface import implements
 
 from zope import schema
 from ordereddict import OrderedDict
@@ -22,28 +15,21 @@ try:
     import json
 except: # pragma: no cover
     import simplejson as json
-from zope.component import adapts, getUtility, getAdapters, getMultiAdapter, queryMultiAdapter
+from zope.component import adapts, getMultiAdapter, queryMultiAdapter
 from zope.event import notify
 from collective.cron.utils import croniter, to_utc
 from zope.site.hooks import getSite, setSite
 from z3c.form.object import registerFactoryAdapter
 
-from collective.cron import MessageFactory as _
 from collective.cron import events as e
 from collective.cron.interfaces import (
     ConstrainedObject,
     ICrontab,
     ILog,
-    InvalidObject,
     ICrontabRegistryManager,
     InvalidCrontab,
-    InvalidCron,
-    IJobRunner,
-    InvalidLog,
-    ICCRONUtils,
     ICron,
     job_status,
-    IRegistryCrontab,
     IJobRunner,
     ICronManager,
 )
